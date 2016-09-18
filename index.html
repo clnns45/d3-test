@@ -45,9 +45,8 @@ var xAxis = d3.axisBottom()
     .scale(x0);
 
 var yAxis = d3.axisLeft()
-    .scale(y)
-    .tickFormat(d3.format(".2s"));
-
+    .scale(y);
+    
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
