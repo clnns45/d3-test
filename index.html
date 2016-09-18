@@ -59,14 +59,14 @@ var svg = d3.select("body").append("svg")
 
 d3.csv("/myData.csv", function(error, data) {
   if (error) throw error;
-
+  console.log(data);
   var yearNames = d3.keys(data[0]).filter(function(key) { return key !== "Unit"; });
 
   data.forEach(function(d) {
     d.years = yearNames.map(function(name) { return {name: name, value: +d[name]}; });
   });
 
-  console.log(data);
+  
 
   x0.domain(data.map(function(d) { return d.Unit; }));
   x1.domain(yearNames).rangeRound([0, x0.range()]);
