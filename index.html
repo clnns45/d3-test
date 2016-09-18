@@ -62,6 +62,8 @@ d3.csv("/myData.csv", function(error, data) {
     d.years = yearNames.map(function(name) { return {name: name, value: +d[name]}; });
   });
 
+  console.log(data);
+
   x0.domain(data.map(function(d) { return d.Unit; }));
   x1.domain(yearNames).rangeRound([0, x0.range()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(d.years, function(d) { return d.value; }); })]);
